@@ -321,10 +321,20 @@ const food = [
   },
 ];
 
-const print_all = () => {
-  food.forEach((item) => {
-    console.log(item.foodname);
-  });
-};
+// const print_all = () => {
+//   food.forEach((item) => {
+//     console.log(item.foodname);
+//   });
+// };
 console.log("List of all food items\n");
 print_all();
+
+const print_vegetable = () => {
+  food.forEach((item) => {
+    if (food[i].category === "Vegetable") {
+      console.log(item.foodname);
+    }
+  });
+};
+console.log("\nList of all vegetable");
+print_vegetable();
