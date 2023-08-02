@@ -1,4 +1,4 @@
-const foodData = [
+const food = [
   {
     id: 1,
     foodname: "Apple",
@@ -320,3 +320,11 @@ const foodData = [
     cab: 30,
   },
 ];
+
+const print_all = () => {
+  food.forEach((item) => {
+    console.log(item.foodname);
+  });
+};
+console.log("List of all food items\n");
+print_all();
