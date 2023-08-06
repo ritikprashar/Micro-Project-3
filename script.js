@@ -480,3 +480,32 @@ const item9 = document.querySelector("#item9");
 const para9 = document.createElement("p");
 para9.innerHTML = lowCalorieProducts(foodData);
 item9.append(para9);
+
+// List all the food items with highest protien content to lowest
+
+const protienSorted = (foodData) => {
+  let i = 1;
+
+  const products = [...foodData];
+
+  const names = products
+    .sort((a, b) => {
+      if (Number(a.protiens) > Number(b.protiens)) {
+        return -1;
+      }
+      if (Number(a.protiens) < Number(b.protiens)) {
+        return 1;
+      }
+      return 0;
+    })
+    .map((product) => `${i++}. ${product.foodname} => ${product.protiens}`);
+
+  return names.join("<br>");
+};
+
+console.log(protienSorted(foodData));
+
+const item10 = document.querySelector("#item10");
+const para10 = document.createElement("p");
+para10.innerHTML = protienSorted(foodData);
+item10.append(para10);
