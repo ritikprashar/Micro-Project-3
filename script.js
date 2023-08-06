@@ -509,3 +509,32 @@ const item10 = document.querySelector("#item10");
 const para10 = document.createElement("p");
 para10.innerHTML = protienSorted(foodData);
 item10.append(para10);
+
+// List all the food items with lowest cab content to highest
+
+const cabSorted = (foodData) => {
+  let i = 1;
+
+  const products = [...foodData];
+
+  const names = products
+    .sort((a, b) => {
+      if (Number(a.cab) < Number(b.cab)) {
+        return -1;
+      }
+      if (Number(a.cab) > Number(b.cab)) {
+        return 1;
+      }
+      return 0;
+    })
+    .map((product) => `${i++}. ${product.foodname} => ${product.cab}`);
+
+  return names.join("<br>");
+};
+
+console.log(cabSorted(foodData));
+
+const item11 = document.querySelector("#item11");
+const para11 = document.createElement("p");
+para11.innerHTML = cabSorted(foodData);
+item11.append(para11);
