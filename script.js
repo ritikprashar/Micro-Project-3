@@ -462,3 +462,21 @@ const item8 = document.querySelector("#item8");
 const para8 = document.createElement("p");
 para8.innerHTML = highCalorieProducts(foodData);
 item8.append(para8);
+
+// List all the food items with calorie below 100
+const lowCalorieProducts = (foodData) => {
+  let i = 1;
+
+  const products = foodData
+    .filter((food) => food.calorie < 100)
+    .map((product) => `${i++}. ${product.foodname}`);
+  return products.join("<br>");
+};
+
+console.log(lowCalorieProducts(foodData));
+
+const item9 = document.querySelector("#item9");
+
+const para9 = document.createElement("p");
+para9.innerHTML = lowCalorieProducts(foodData);
+item9.append(para9);
