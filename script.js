@@ -1,4 +1,4 @@
-const food = [
+const foodData = [
   {
     id: 1,
     foodname: "Apple",
@@ -321,90 +321,18 @@ const food = [
   },
 ];
 
-const print_all = () => {
-  food.forEach((item) => {
-    console.log(item.foodname);
-  });
-};
-console.log("List of all food items\n");
-print_all();
+console.log(foodData);
 
-const print_vegetable = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Vegetable") {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all vegetable\n");
-print_vegetable();
+// List of all food items
 
-const print_fruit = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Fruit") {
-      console.log(item.foodname);
-    }
-  });
+const listAllItems = (foodData) => {
+  let i = 1;
+  foodItems = foodData.map((food) => `${i++}. ${food.foodname}`);
+  return foodItems.join("<br>");
 };
-console.log("\nList of all Fruit\n");
-print_fruit();
+console.log(listAllItems(foodData));
 
-const print_protien = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Protein") {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all Protein\n");
-print_protein();
-
-const print_nuts = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Nuts") {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all Nuts\n");
-print_nuts();
-
-const print_grains = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Grains") {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all Grains\n");
-print_grains();
-
-const print_dairy = () => {
-  food.forEach((item) => {
-    if (food[i].category === "Dairy") {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all Dairy\n");
-print_dairy();
-
-const print_highCalorie = () => {
-  food.forEach((item) => {
-    if (item.calorie > 100) {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all food items with calorie above 100\n");
-print_highCalorie();
-
-const print_lowCalorie = () => {
-  food.forEach((item) => {
-    if (item.calorie < 100) {
-      console.log(item.foodname);
-    }
-  });
-};
-console.log("\nList of all food items with calorie below 100\n");
-print_lowCalorie();
+const item1 = document.querySelector("#item1");
+const para1 = document.createElement("p");
+para1.innerHTML = listAllItems(foodData);
+item1.append(para1);
