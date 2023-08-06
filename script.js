@@ -354,3 +354,93 @@ const item2 = document.querySelector("#item2");
 const para2 = document.createElement("p");
 para2.innerHTML = listAllVegetables(foodData);
 item2.append(para2);
+
+// List all the food items with category fruit
+
+const listAllFruits = (foodData) => {
+  let i = 1;
+
+  const fruits = foodData
+    .filter((food) => food.category === "Fruit")
+    .map((fruit) => `${i++}. ${fruit.foodname}`);
+  return fruits.join("<br>");
+};
+
+console.log(listAllFruits(foodData));
+
+const item3 = document.querySelector("#item3");
+const para3 = document.createElement("p");
+para3.innerHTML = listAllFruits(foodData);
+item3.append(para3);
+
+// List all the food items with category protien
+
+const listAllProtiens = (foodData) => {
+  let i = 1;
+
+  const protiens = foodData
+    .filter((food) => food.category === "Protein")
+    .map((protien) => `${i++}. ${protien.foodname}`);
+  return protiens.join("<br>");
+};
+
+console.log(listAllProtiens(foodData));
+
+const item4 = document.querySelector("#item4");
+const para4 = document.createElement("p");
+para4.innerHTML = listAllProtiens(foodData);
+item4.append(para4);
+
+// List all the food items with category nuts
+
+const listAllNuts = (foodData) => {
+  let i = 1;
+
+  const nuts = foodData
+    .filter((food) => food.category === "Nuts")
+    .map((nut) => `${i++}. ${nut.foodname}`);
+  return nuts.join("<br>");
+};
+
+console.log(listAllNuts(foodData));
+
+const item5 = document.querySelector("#item5");
+const para5 = document.createElement("p");
+para5.innerHTML = listAllNuts(foodData);
+item5.append(para5);
+
+// List all the food items with category grains
+
+const listAllGrains = (foodData) => {
+  let i = 1;
+
+  const grains = foodData
+    .filter((food) => food.category === "Grain")
+    .map((grain) => `${i++}. ${grain.foodname}`);
+  return grains.join("<br>");
+};
+
+console.log(listAllGrains(foodData));
+
+const item6 = document.querySelector("#item6");
+const para6 = document.createElement("p");
+para6.innerHTML = listAllGrains(foodData);
+item6.append(para6);
+
+// List all the food items with category dairy
+
+const listAllDairy = (foodData) => {
+  let i = 1;
+
+  const dairy = foodData
+    .filter((food) => food.category === "Dairy")
+    .map((product) => `${i++}. ${product.foodname}`);
+  return dairy.join("<br>");
+};
+
+console.log(listAllDairy(foodData));
+
+const item7 = document.querySelector("#item7");
+const para7 = document.createElement("p");
+para7.innerHTML = listAllDairy(foodData);
+item7.append(para7);
