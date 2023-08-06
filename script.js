@@ -330,9 +330,27 @@ const listAllItems = (foodData) => {
   foodItems = foodData.map((food) => `${i++}. ${food.foodname}`);
   return foodItems.join("<br>");
 };
+
 console.log(listAllItems(foodData));
 
 const item1 = document.querySelector("#item1");
 const para1 = document.createElement("p");
 para1.innerHTML = listAllItems(foodData);
 item1.append(para1);
+
+// List all food items with category vegetables
+
+const listAllVegetables = (foodData) => {
+  let i = 1;
+  const vegetables = foodData
+    .filter((food) => food.category === "Vegetable")
+    .map((vegetable) => `${i++}. ${vegetable.foodname}`);
+  return vegetables.join("<br>");
+};
+
+console.log(listAllVegetables(foodData));
+
+const item2 = document.querySelector("#item2");
+const para2 = document.createElement("p");
+para2.innerHTML = listAllVegetables(foodData);
+item2.append(para2);
