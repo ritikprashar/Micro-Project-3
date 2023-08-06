@@ -444,3 +444,21 @@ const item7 = document.querySelector("#item7");
 const para7 = document.createElement("p");
 para7.innerHTML = listAllDairy(foodData);
 item7.append(para7);
+
+// List all the food items with calorie above 100
+
+const highCalorieProducts = (foodData) => {
+  let i = 1;
+
+  const products = foodData
+    .filter((food) => food.calorie > 100)
+    .map((product) => `${i++}. ${product.foodname}`);
+  return products.join("<br>");
+};
+
+console.log(highCalorieProducts(foodData));
+
+const item8 = document.querySelector("#item8");
+const para8 = document.createElement("p");
+para8.innerHTML = highCalorieProducts(foodData);
+item8.append(para8);
